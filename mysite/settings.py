@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
+    'tagging.apps.TaggingConfig',
+    'disqus',
+    'django.contrib.sites',
 ]
+
+DISQUS_WEBSITE_SHORTNAME = 'testwebprogrammingsite'
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
