@@ -2,13 +2,118 @@
 {% block title %}
     home.html
 {% endblock %}
+{% load staticfiles %}
+{% block extrastyle %}{% static 'css/home.css' %}{% endblock extrastyle %}
 {% block content %}
-    <div id="content">
-        This is Content area.
+    <div id="content_home">
+        <div id="homeimg">
+            <a href="/">
+                <img src="{% static 'img/python_logo.png' %}" style="height: 250px;" />
+            </a>
+            <h4 style="margin: 0;">
+                This is Django test web site.
+            </h4>
+        </div>
+        <hr style="margin: 5px 0;"/>
+        <h2>
+            Select Application
+        </h2>
+        <table id="applist">
+            <tr>
+                <td>
+                    <b>
+                        <i>
+                            <a href="{% url 'bookmark:index' %}">
+                                Bookmark
+                            </a>
+                        </i>
+                    </b>
+                </td>
+                <td>
+                    You can write your own post and share to others.
+                    Donce id elit non miporta gravida at eget metus.
+                    Fusce dapibus, tellus ac cursus commodo
+                </td>
+                <td class="Edit">
+                    <i>
+                        <a href="#">
+                            Add
+                        </a>
+                    </i>
+                </td>
+                <td class="Edit">
+                    <i>
+                        <a href="#">
+                            Change
+                        </a>
+                    </i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>
+                        <i>
+                            <a href="{% url 'blog:index' %}">
+                                Blog
+                            </a>
+                        </i>
+                    </b>
+                </td>
+                <td>
+                    You can write your own post and share to others.
+                    Donec id elit non miporta gravida at eget metus.
+                    Fusce dapibus, tellus ac cursus commodo
+                </td>
+                <td class="Edit">
+                    <i>
+                        <a href="#">
+                            Add
+                        </a>
+                    </i>
+                </td>
+                <td class="Edit">
+                    <i>
+                        <a href="#">
+                            Change
+                        </a>
+                    </i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>
+                        <i>
+                            <a href="#">
+                                Photo
+                            </a>
+                        </i>
+                    </b>
+                </td>
+                <td>
+                    You can write your own post and share to others.
+                    Donec id elit non miporta gravida at eget metus.
+                    Fusce dapibus, tellus ac cursus commodo
+                </td>
+                <td class="Edit">
+                    <i>
+                        <a href="#">
+                            Add
+                        </a>
+                    </i>
+                </td>
+                <td class="Edit">
+                    <i>
+                        <a href="#">
+                            Change
+                        </a>
+                    </i>
+                </td>
+            </tr>
+        </table>
     </div>
 {% endblock content %}
 {% block footer %}
     <div id="footer">
-        This is FOOTER area.
+        &copy; Mux 2018
     </div>
 {% endblock footer %}

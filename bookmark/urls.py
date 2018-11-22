@@ -5,5 +5,5 @@ app_name = 'bookmark_app'
 
 urlpatterns = [
     url(r'^$', BookmarkLV.as_view(), name='index'),
-    url(r'^(?P<px>\d+)/$', BookmarkDV.as_view(), name='detail'),
+    url(r'^(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
 ]
