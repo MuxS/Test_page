@@ -6,9 +6,17 @@
 {% block extrastyle %}{% static 'css/home.css' %}{% endblock extrastyle %}
 {% block content %}
     <div id="content_home">
-        <div id="homeimg">
+        <div id="img_slide">
             <a href="/">
-                <img src="{% static 'img/python_logo.png' %}" style="height: 250px;" />
+                <img src="{% static 'img/jus1.jpg' %}" alt="jus" id="jus"/>
+                <h2  id="jus_tag">J-US WordShip<hr/></h2>
+                <a id="jus_a_tag">제이어스 워십</a>
+                <img src="{% static 'img/markers1.jpg' %}" alt="markers" id="markers"/>
+                <h2  id="markers_tag">Markers WordShip<hr/></h2>
+                <a id="markers_a_tag">마커스 워십</a>
+                <img src="{% static 'img/anointing1.jpg' %}" alt="anointing" id="anointing"/>
+                <h2  id="anointing_tag">Anointing WordShip<hr/></h2>
+                <a id="anointing_a_tag">어노인팅 워십</a>
             </a>
             <h4 style="margin: 0;">
                 This is Django test web site.

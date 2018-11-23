@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from tagging.fields import TagField
+from django.utils import timezone
 
 # python2 unicode
 from django.utils.encoding import python_2_unicode_compatible
