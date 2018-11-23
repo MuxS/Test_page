@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Signup{% endblock %}
+{% block content %}
+    <div id="register_div">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for field in signup_form %}
+                <div class="form-group{% if field.errors %} has-error{% endif %}">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <span>
+                                {{ error }}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            {% if signup_form.non_field_errors %}
+                {% for error in login_form.non_field_errors %}
+                    <p>
+                        <b>
+                            {{ error }}
+                        </b>
+                    </p>
+                {% endfor %}
+            {% endif %}
+            <button>회원가입</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from blog.views import *
+from . import views
 
 app_name = 'blog_app'
 
@@ -36,4 +37,13 @@ urlpatterns = [
 
     # Example: /search/
     url(r'^search/$', SearchFormView.as_view(), name='search'),
+
+    # login
+    url(r'^login/$', views.login, name='login'),
+
+    # logout
+    url('^logout/$', views.logout, name='logout'),
+
+    # signup
+    url(r'^signup/$', views.signup, name='signup'),
 ]

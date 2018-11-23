@@ -118,6 +118,22 @@ td, th {
 .comment {
     margin: 20px 0px 20px 20px;
 }
+#login_div {
+    position: absolute;
+    left: 700px;
+    top: 300px;
+    border: 1px solid white;
+    width: 500px;
+    height: 500px;
+}
+#register_div {
+    position: absolute;
+    left: 700px;
+    top: 300px;
+    border: 1px solid white;
+    width: 500px;
+    height: 500px;
+}
 
 @media (max-width: 1600px) and (max-height: 1050px) {
     #wrap {
