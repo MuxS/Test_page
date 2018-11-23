@@ -81,19 +81,19 @@ def login(request):
             )
             if user:
                 django_login(request, user)
-                return redirect('blog:post_list')
+                return redirect('blog:index')
         login_form.add_error(None, '아이디 또는 비밀번호가 올바르지 않습니다.')
     else:
         login_form = LoginForm()
     context = {
-        'login_form' : login_form,
+        'login_form': login_form,
     }
     return render(request, 'blog/login.html', context)
 
 # Logout
 def logout(request):
     django_logout(request)
-    return redirect('post:post_list')
+    return redirect('blog:index')
 
 # Signup
 def signup(request):
@@ -101,7 +101,7 @@ def signup(request):
         signup_form = SignupForm(request.POST)
         if signup_form.is_valid():
             signup_form.signup()
-            return redirect('post:post_list')
+            return redirect('blog:index')
     else:
         signup_form = SignupForm()
     context = {
