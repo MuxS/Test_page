@@ -16,6 +16,9 @@ class Post(models.Model):
     modify_date = models.DateTimeField('Modify Date', auto_now=True)
     tag = TagField()
 
+    # approve_comment는 안되는 변수임
+    approve_comment = models.TextField(blank=True)
+
     class Meta:
         verbose_name = 'post'
         verbose_name_plural = 'posts'
@@ -33,3 +36,10 @@ class Post(models.Model):
 
     def get_next_post(self):
         return self.get_next_by_modify_date()
+
+# class SecretEasterEgg(models.Model):
+#     title = models.CharField(max_length=100)
+#     content = models.TextField(blank=False, null=False)
+#     checkbox = models.BooleanField()
+
+

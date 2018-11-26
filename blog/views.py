@@ -11,6 +11,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login as django_login, logout as django_logout, authenticate
 from .forms import LoginForm, SignupForm
 
+from django.views.generic.base import TemplateView
+
+# Redirect home
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
 # ListView
 class PostLV(ListView):
     model = Post
@@ -81,7 +87,7 @@ def login(request):
             )
             if user:
                 django_login(request, user)
-                return redirect('blog:index')
+                return redirect('home')
         login_form.add_error(None, '아이디 또는 비밀번호가 올바르지 않습니다.')
     else:
         login_form = LoginForm()
@@ -93,7 +99,7 @@ def login(request):
 # Logout
 def logout(request):
     django_logout(request)
-    return redirect('blog:index')
+    return redirect('home')
 
 # Signup
 def signup(request):
@@ -101,7 +107,7 @@ def signup(request):
         signup_form = SignupForm(request.POST)
         if signup_form.is_valid():
             signup_form.signup()
-            return redirect('blog:index')
+            return redirect('home')
     else:
         signup_form = SignupForm()
     context = {

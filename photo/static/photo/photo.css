@@ -1,0 +1,41 @@
+.album-list {
+    margin: 20px 50px;
+}
+.album-list-photo {
+    float: left;
+    width: 150px;
+    height: 180px;
+}
+.album-detail {
+    margin: 30px 10px;
+}
+.album-detail-photo {
+    float: left;
+    width: 220px;
+    height: 220px;
+}
+.album-detail-photo > li {
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
+.photo-detail {
+    margin: 30px 50px 0px 50px;
+    border: 1px solid #ccc;
+    padding: 20px 20px;
+}
+.photo-detail td {
+    width: 50%;
+}
+.photo-detail ul il {
+    font-weight: bold;
+}
+.photo-detail ul p {
+    font-style: italic;
+}
+.thumbnail {
+    border: 3px solid #ccc;
+}
+.clear_float {
+    clear: both;
+}

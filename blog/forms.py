@@ -30,14 +30,14 @@ class SignupForm(forms.Form):
             }
         )
     )
-    password1 = forms.CharField(
+    password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
                 'class': 'form-control',
             }
         )
     )
-    password2 = forms.CharField(
+    repassword = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
                 'class': 'form-control',
@@ -53,14 +53,24 @@ class SignupForm(forms.Form):
 
     def clean_password2(self):
         password1 = self.cleaned_data['password1']
-        password2 = self.cleaned_data['password2']
-        if password1 != password2:
+        repassword = self.cleaned_data['repassword']
+        if password1 != repassword:
             raise forms.ValidationError('비밀번호와 비밀번호 확인란의 값이 일치하지 않습니다')
-        return password2
+        return repassword
 
     def signup(self):
         if self.is_valid():
             return User.objects.create_user(
                 username=self.cleaned_data['username'],
-                password=self.cleaned_data['password2'])
+                password=self.cleaned_data['repassword'])
+
+# class EasterEggCheckBox(forms.ModelForm):
+#     checkbox = forms.BooleanField()
+#
+#     def __init__(self):
+#         if check_something():
+#             self.fields['checkbox'].initial = True
+#
+#     class Meta:
+#         model = SecretEasterEgg
 

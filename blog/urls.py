@@ -1,12 +1,15 @@
 from django.conf.urls import url
 from blog.views import *
 from . import views
+from mysite.views import HomeView
 
 app_name = 'blog_app'
 
 urlpatterns = [
+    url(r'^$', HomeView.as_view(), name='home'),
+
     # Example: /
-    url(r'^$', PostLV.as_view(), name='index'),
+    url(r'^index/$', PostLV.as_view(), name='index'),
 
     # Example: /post/(same as /)
     url(r'^post/$', PostLV.as_view(), name='post_list'),
