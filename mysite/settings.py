@@ -23,10 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tmh_i_4((eat$6jmplgb72-gt1)kzq28354_^fg88d6xw%p8+4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# 원래는 True
+
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.pythonanywhere.com']
-
+# pythonanywhere
+ALLOWED_HOSTS = ['localhoist', '127.0.0.1', '[::1]', 'pythonanywhere.com']
 
 # Application definition
 
@@ -88,6 +90,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
