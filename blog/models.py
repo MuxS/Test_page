@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from tagging.fields import TagField
 from django.utils import timezone
 
 # python2 unicode
@@ -14,7 +13,6 @@ class Post(models.Model):
     content = models.TextField('CONTENT')
     create_date = models.DateTimeField('Create Date', auto_now_add=True)
     modify_date = models.DateTimeField('Modify Date', auto_now=True)
-    tag = TagField()
 
     # approve_comment는 안되는 변수임
     approve_comment = models.TextField(blank=True)
